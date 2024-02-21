@@ -7,7 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class InfinitySurveyPostsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(InfinitySurveyPostsApplication.class, args);
+		SpringApplication.run(InfinitySurveyPostsApplication.class, args
+		);
 	}
 
 }
