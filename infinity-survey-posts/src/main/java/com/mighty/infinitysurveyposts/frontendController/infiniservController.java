@@ -1,13 +1,11 @@
 package com.mighty.infinitysurveyposts.frontendController;
 
 import com.mighty.infinitysurveyposts.User.User;
+import com.mighty.infinitysurveyposts.service.InfiniService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.swing.*;
-import java.util.Date;
 
 //@RequestParam(value = "firstname")String firstname, @RequestParam(value = "lastname")String lastname
 // if(firstname.equals("admin")){
@@ -24,20 +22,11 @@ import java.util.Date;
 @RestController
 public class infiniservController {
 
+    InfiniService infiniService = new InfiniService();
+
     @PostMapping ("/createuser")
     public String infiniservDataController(@RequestBody User request){
-       String firstname = request.getFirstname();
-       String lastname = request.getLastname();
-       int age = request.getAge();
-       String username = request.getUsername();
-       Date birthday = request.getBirthday();
-       char[] passwordField = request.getPassword().getPassword();
-       String passText = new String(passwordField);
-
-        System.out.println("Alle Daten: " + firstname + " " + lastname + " " + age  + " " + passwordField + " String Text: " + passText );
-
-       return "Daten wurden erfolgreich angenommen und in der Datenbank gespeichert";
+       return infiniService.mapUser(request);
     }
-
 
 }
