@@ -1,15 +1,14 @@
-package com.mighty.infinitysurveyposts.User;
+package com.mighty.infinitysurveyposts.models;
 
-import javax.swing.*;
 import java.util.Date;
 
-public class User {
+public class UserModel {
     private String firstname;
     private String lastname;
     private String username;
 
 
-    private JPasswordField passwordField = new JPasswordField();
+    private String password;
 
     private String email;
 
@@ -20,19 +19,19 @@ public class User {
     private String country;
 
     private Date lastlogin = new Date(); //unsafe ??
-    private Date created_at = new Date(); // unsafe ??
-                                                                                                 //unsafe??
-    public void User(String firstname, String lastname, String username,JPasswordField passwordField, String email, int age, Date birthday  , String country, Date lastlogin, Date created_at){
+    private Date created_At = new Date(); // unsafe ??
+
+    public void User(String firstname, String lastname, String username,String password, String email, int age, Date birthday  , String country, Date lastlogin, Date created_At){
         this.firstname = firstname;
         this.lastname = lastname;
         this.username = username;
-        this.passwordField = passwordField;
+        this.password = password;
         this.age = age;
         this.email = email;
         this.birthday = birthday;
         this.country = country;
         this.lastlogin = lastlogin;
-        this.created_at = created_at;
+        this.created_At = created_At;
     }
 
     public String getFirstname() {
@@ -55,16 +54,16 @@ public class User {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsername() {
+        this.username = "newest datum"; //test //test //test
     }
 
-    public JPasswordField getPassword() {
-        return passwordField;
+    public String getPassword() {
+        return password;
     }
 
-    public void JPasswordField(int password) {
-        this.passwordField = passwordField;
+    public void String(String password) {
+        this.password = password;
     }
 
     public String getEmail() {
@@ -110,12 +109,12 @@ public class User {
         this.lastlogin = lastlogin;
     }
 
-    public Date getCreated_at() {
-        return created_at;
+    public Date getCreated_At() {
+        return created_At;
     }
 
-    public void setCreated_at(Date created_at) {
-        this.created_at = created_at;
+    public void setCreated_At(Date created_at) {
+        this.created_At = created_At;
     }
 
 }
