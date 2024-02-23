@@ -1,8 +1,18 @@
 package com.mighty.infinitysurveyposts.models;
 
+import jakarta.persistence.*;
+
 import java.util.Date;
 
+@Entity
+@Table(name = "tuser")
 public class UserModel {
+
+
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
+
+    private Integer user_id;
     private String firstname;
     private String lastname;
     private String username;
@@ -32,6 +42,14 @@ public class UserModel {
         this.country = country;
         this.lastlogin = lastlogin;
         this.created_At = created_At;
+    }
+
+    public Integer getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(Integer user_id) {
+        this.user_id = user_id;
     }
 
     public String getFirstname() {

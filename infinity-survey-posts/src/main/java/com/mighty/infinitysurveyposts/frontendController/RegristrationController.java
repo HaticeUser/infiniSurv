@@ -1,7 +1,10 @@
 package com.mighty.infinitysurveyposts.frontendController;
 
+import com.mighty.infinitysurveyposts.Repositorys.UserRepository;
 import com.mighty.infinitysurveyposts.models.UserModel;
 import com.mighty.infinitysurveyposts.services.RegristrationService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 //@RequestParam(value = "firstname")String firstname, @RequestParam(value = "lastname")String lastname
@@ -19,9 +22,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class RegristrationController {
 
+
+
     RegristrationService regristrationService = new RegristrationService();
     @PostMapping("/regristration")
-    public String infiniservDataController(@RequestBody UserModel user){ //was macht dieser code (@RequestBody UserModel user)
+    public ResponseEntity<String> infiniservDataController(@RequestBody UserModel user){ //was macht dieser code (@RequestBody UserModel user)
+
     return regristrationService.createUser(user);
 
     }
