@@ -12,9 +12,9 @@ import java.util.Date;
 
 @Service
 public class RegristrationService {
-
     @Autowired
     private UserRepository userRepository;
+
     public ResponseEntity<String>  createUser(UserModel user) { // was macht dieser code ?? (UserModel user) ??
 
         String firstname = user.getFirstname();
@@ -27,9 +27,13 @@ public class RegristrationService {
         String country = user.getCountry();
         Date lastLogin = user.getLastlogin();
         Date createdAt = user.getCreated_At();
+        UserModel newUser = new UserModel();
+        user.setUser_id(user.getUser_id());
+        user.setFirstname(user.getFirstname());
 
         lastUserDataAssignment(user);
-        userRepository.save(user);
+        userRepository.save(newUser);
+
 
         System.out.println( "Alle Daten: Firstname " + firstname +
                 " Lastname: " + lastname + " Username: " + username

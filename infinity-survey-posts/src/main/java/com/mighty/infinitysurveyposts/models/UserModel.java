@@ -16,20 +16,18 @@ public class UserModel {
     private String firstname;
     private String lastname;
     private String username;
-
-
     private String password;
 
     private String email;
 
     private int age;
 
-    private Date birthday; //unsafe??
+    private Date birthday;
 
     private String country;
 
-    private Date lastlogin = new Date(); //unsafe ??
-    private Date created_At = new Date(); // unsafe ??
+    private Date lastlogin = new Date();
+    private Date created_At = new Date();
 
     public void User(String firstname, String lastname, String username,String password, String email, int age, Date birthday  , String country, Date lastlogin, Date created_At){
         this.firstname = firstname;
@@ -72,8 +70,8 @@ public class UserModel {
         return username;
     }
 
-    public void setUsername() {
-        this.username = "newest datum"; //test //test //test
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
