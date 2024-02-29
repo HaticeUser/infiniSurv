@@ -5,31 +5,26 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "tuser")
+@Table( name = "tuser" , schema = "dbuser")
 public class UserModel {
 
 
 @Id
-@GeneratedValue(strategy = GenerationType.AUTO)
-
+@GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer user_id;
     private String firstname;
     private String lastname;
     private String username;
     private String password;
-
     private String email;
-
     private int age;
-
     private Date birthday;
-
     private String country;
-
-    private Date lastlogin = new Date();
+    private String gender;
+    private Date last_login = new Date();
     private Date created_At = new Date();
 
-    public void User(String firstname, String lastname, String username,String password, String email, int age, Date birthday  , String country, Date lastlogin, Date created_At){
+    public void User(String firstname, String lastname, String username,String password, String email, int age, Date birthday  , String country,String gender, Date last_login, Date created_At){
         this.firstname = firstname;
         this.lastname = lastname;
         this.username = username;
@@ -38,17 +33,11 @@ public class UserModel {
         this.email = email;
         this.birthday = birthday;
         this.country = country;
-        this.lastlogin = lastlogin;
+        this.last_login = last_login;
         this.created_At = created_At;
+        this.gender = gender;
     }
 
-    public Integer getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
-    }
 
     public String getFirstname() {
         return firstname;
@@ -78,7 +67,7 @@ public class UserModel {
         return password;
     }
 
-    public void String(String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -107,8 +96,6 @@ public class UserModel {
         this.birthday = birthday;
     }
 
-
-
     public String getCountry() {
         return country;
     }
@@ -117,12 +104,20 @@ public class UserModel {
         this.country = country;
     }
 
-    public Date getLastlogin() {
-        return lastlogin;
+    public String getGender() {
+        return gender;
     }
 
-    public void setLastlogin(Date lastlogin) {
-        this.lastlogin = lastlogin;
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public Date getLast_login() {
+        return last_login;
+    }
+
+    public void setLast_login(Date lastlogin) {
+        this.last_login = lastlogin;
     }
 
     public Date getCreated_At() {
