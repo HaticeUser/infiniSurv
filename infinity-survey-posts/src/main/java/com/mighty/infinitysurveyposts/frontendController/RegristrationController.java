@@ -1,11 +1,9 @@
 package com.mighty.infinitysurveyposts.frontendController;
 
 import com.mighty.infinitysurveyposts.models.UserModel;
-import com.mighty.infinitysurveyposts.services.LoginService;
-import com.mighty.infinitysurveyposts.services.RegristrationService;
-import jakarta.persistence.Id;
+import com.mighty.infinitysurveyposts.services.regristrationServices.LoginService;
+import com.mighty.infinitysurveyposts.services.regristrationServices.SignUpService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class RegristrationController {
 
     @Autowired
-    RegristrationService regristrationService = new RegristrationService();
+    SignUpService signUpService = new SignUpService();
 
     @Autowired
     LoginService loginService = new LoginService();
@@ -29,7 +27,7 @@ public class RegristrationController {
     @PostMapping("/signup")
     public ResponseEntity<String> signUpController(@RequestBody UserModel user){
 
-    return regristrationService.createUser(user);
+    return signUpService.createUser(user);
 
     }
 

@@ -1,4 +1,4 @@
-package com.mighty.infinitysurveyposts.services;
+package com.mighty.infinitysurveyposts.services.regristrationServices;
 
 import com.mighty.infinitysurveyposts.models.UserModel;
 import com.mighty.infinitysurveyposts.repositorys.UserRepository;

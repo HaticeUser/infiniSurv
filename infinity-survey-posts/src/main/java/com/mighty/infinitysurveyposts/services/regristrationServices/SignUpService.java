@@ -1,4 +1,4 @@
-package com.mighty.infinitysurveyposts.services;
+package com.mighty.infinitysurveyposts.services.regristrationServices;
 
 
 import com.mighty.infinitysurveyposts.repositorys.UserRepository;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 
 @Service
-public class RegristrationService {
+public class SignUpService {
 
     @Autowired
     private UserRepository userRepository;
