@@ -10,14 +10,26 @@ import org.springframework.stereotype.Service;
 @Service
 public class LoginService {
 
+    @Autowired
+    UserRepository userRepository;
+    private boolean status;
 
-    public ResponseEntity<String> loginAuthentification (UserModel user){
-        String email = user.getEmail();
-        String password = user.getPassword();
+    public ResponseEntity<Boolean> loginAuthentification (UserModel user){
 
-        System.out.println("Email " + email + "password" + password);
+        UserModel userEmail = userRepository.findByEmail(user.getEmail());
 
-        return new ResponseEntity<String>("Data saved", HttpStatus.OK);
+        if(userEmail != null){
+            if(user.getPassword().equals(userEmail.getPassword())){
+                status = true;
+            }else {
+                status = false;
+            }
+        }else{
+            status =  false;
+        }
+
+        return  new ResponseEntity<Boolean>(status,HttpStatus.OK);
+
 
     }
 

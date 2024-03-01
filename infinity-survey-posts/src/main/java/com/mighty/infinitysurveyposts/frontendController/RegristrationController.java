@@ -21,13 +21,13 @@ public class RegristrationController {
     LoginService loginService = new LoginService();
 
     @PostMapping("/login")
-    public ResponseEntity<String> loginController(@RequestBody UserModel user){
+    public ResponseEntity<Boolean> loginController(@RequestBody UserModel user){
 
+        return loginService.loginAuthentification(user);
 
-       return loginService.loginAuthentification(user); // noch mit Service ändern
     }
     @PostMapping("/signup")
-    public ResponseEntity<String> signUpController(@RequestBody UserModel user){ //was macht dieser code (@RequestBody UserModel user)
+    public ResponseEntity<String> signUpController(@RequestBody UserModel user){
 
     return regristrationService.createUser(user);
 

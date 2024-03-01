@@ -24,7 +24,7 @@ public class UserModel {
     private Date last_login = new Date();
     private Date created_At = new Date();
 
-    public void User(String firstname, String lastname, String username,String password, String email, int age, Date birthday  , String country,String gender, Date last_login, Date created_At){
+    protected void User(String firstname, String lastname, String username, String password, String email, int age, Date birthday  , String country, String gender, Date last_login, Date created_At){
         this.firstname = firstname;
         this.lastname = lastname;
         this.username = username;
