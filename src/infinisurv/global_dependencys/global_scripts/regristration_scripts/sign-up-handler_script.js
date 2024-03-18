@@ -1,5 +1,6 @@
 // import moment from "../../../../../node_modules/moment/moment.js";
 import {ApiInterfaceHandler} from "../api-handler_script.js"
+import { InputSanitizing } from "../security-measures_scripts/input_sanitizing_script.js";
 
 export class SignUpHandler{
 
@@ -11,16 +12,26 @@ export class SignUpHandler{
         this.email = document.getElementById("email");
         this.password = document.getElementById("password");
         this.login_Inputs = document.getElementsByClassName("login-input");
+
+        this.HTMLvar = [];
+
         this.apiInterfaceHandler = new ApiInterfaceHandler();
+        this.sanitizeInputHandler = new InputSanitizing();
     }
 
     
-    processSignUpData(authorized){
-        if(authorized){
-            this.calculateAge();
+    processSignUpData(){
+        this.HTMLvar.push(this.firstname.value,
+            this.lastname.value,
+            this.username.value,
+            this.email.value,
+            this.password.value);
 
-        }else{
-            alert("chicken nuggets test not functionening")
+        let authorized = this.sanitizeInputHandler.processData(this.HTMLvar);
+        console.log(authorized) // bug
+        if(authorized === true){
+            console.log("Aufruf") // bug
+            this.calculateAge(); // bug
 
         }
        
@@ -28,6 +39,7 @@ export class SignUpHandler{
     
     calculateAge(){
         //Age rechner ausbessern
+        console.log("Aufruf2")
         let year = new Date().getFullYear();
         let month = new Date().getMonth();
         let day = new Date().getDay();
@@ -37,7 +49,7 @@ export class SignUpHandler{
     }
 
     signUpDataTransfer(age){
-        
+        console.log("Aufruf 3")
         const signUpData = {
             firstname:this.firstname.value,
             lastname:this.lastname.value,
@@ -54,17 +66,9 @@ export class SignUpHandler{
             this.login_Inputs[index].value = "";
             
         }
-
-       
-
-      
-        
+    
     }
 
-
-
-
-    
 }
 
 
