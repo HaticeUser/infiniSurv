@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opinion Pollinus</title>
+    <link rel="stylesheet" href="infinisurv.css">
+    <link rel="stylesheet" href="../global_dependencys/global_styles/header_style.css">
+    <link rel="stylesheet" href="../global_dependencys/global_styles/footer_style.css">
+    <link rel="stylesheet" href="../global_dependencys/global_styles/bootstrap_styles/main-bootstrap_style.css">
+    <link rel="stylesheet" href="../global_dependencys/global_styles/login_style.css">
+
+
+</head>
+<!--  -->
+
+<body onload="import('../global_dependencys/global_scripts/main_script.js').then(module => {module.callLoginHandler(event)}).catch(err => {console.error(err);})">
+
+    <header>
+
+        <div class="nav">
+            <input type="checkbox" id="nav-check">
+            <div class="nav-header">
+                <div class="nav-title">
+                    InfiniSurv
+                </div>
+            </div>
+            <div class="nav-btn">
+                <label for="nav-check">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="nav-links">
+                <button class="opinion_poll_header_link"> <a
+                        href="../website_links/surveypost_webpage/html/survey-post_page.html"
+                        target="_blank">Posts</a></button>
+                <a href="../website_links/survey-creation_webpage/html/survey-creation_page.html"
+                    target="_blank">SurveyCreation</a>
+                <a href="http://stackoverflow.com/users/4084003/" target="_blank">News</a>
+                <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">Support</a>
+                <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">Profile</a>
+                <link rel="stylesheet" type="text/css" href="">
+                <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+            </div>
+        </div>
+
+
+
+    </header>
+
+    <main>
+        <div id="main-Container">
+
+            <!-- ---------------------Login Pop-Up bereich------------------------------------------- -->
+            <div class="login-Container" id="login-Container-Visbility">
+                <div class="login-Content">
+                    <input type="checkbox" id="chk" aria-hidden="true" />
+
+                    <div class="signup">
+                        <form onsubmit="import('../global_dependencys/global_scripts/main_script.js').then(module => {module.forwardingSignUpData(event)}).catch(err => {console.error(err);}); return false">
+                            <label class="login-label" for="chk" aria-hidden="true">Sign up</label>
+                            <input class="login-input" id="firstname" name="txt" placeholder="Firstname*" required
+                                size="10" />
+                            <input class="login-input" id="lastname" name="txt" placeholder="Lastname*" required />
+                            <input class="login-input" id="birthday" type="date" name="txt" placeholder="birthday*"
+                                required />
+                            <input class="login-input" id="username" name="txt" placeholder="Username*" required />
+                            <input class="login-input" id="email" type="email" name="email" placeholder="Email*"
+                                required />
+                            <input class="login-input" onchange="import('../global_dependencys/global_scripts/main_script.js').then(module => module.forwardingChangeOnInput(event)).catch(err => console.error(err))" id="password" type="password" name="pswd" placeholder="Password*"
+                                required />
+                            <button class="login-button">Sign up</button>
+                        </form>
+                    </div>
+                   
+
+                    <div class="login">
+                        
+                        <form onsubmit="import('../global_dependencys/global_scripts/main_script.js').then(module => {module.forwardingLoginData(event)}).catch(err => {console.error(err);}); return false">
+                            <label class="login-label" for="chk" aria-hidden="true">Login</label>
+                            <h4 id="loggedIn-display" class="loggedIn-false">Angemeldet</h4>
+                            <input class="login-input" value="" id="login-email" type="email" name="email"
+                                placeholder="Email" required="" />
+                            <input class="login-input" value="" id="login-password" type="password" name="pswd"
+                                placeholder="Password" required="" />
+                            <button class="login-button">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- ---------------------Login Pop-Up bereich Ende------------------------------------------- -->
+            <div class="background-Img">
+
+                <div class="overlay-text-Container"></div>
+
+
+                <div class="container">
+                    <h1>Welcome to InfiniSurv</h1>
+                    <p>Its a Website where You can ask whatever you want and turn it into a survey for others <br>
+                        If you want to, you're survey can be Anonymous, for you or just others </p>
+
+
+
+                    <div class="button-overlay-Container">
+                        <button class="overlay-btn"
+                            onclick="import('../global_dependencys/global_scripts/main_script.js').then(module=> module.forwardingLocationID(0.12))">Posts</button>
+                        <button class="overlay-btn"
+                            onclick="import('../global_dependencys/global_scripts/main_script.js').then(module=> module.forwardingLocationID(0.24))">Umfrage
+                            erstellen</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="info-Containers">
+
+                <div id="info-umfrage-Container" class="info-Container">
+                    <div class="info-text-Container">
+                        <h1 class="info-headline">Umfrage Funktionen</h1>
+                        <p>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi-bi-caret-right-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                            </svg> Erstelle deine eigene Umfragen, an andere Personen, nach lust und laune. <br>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi-bi-caret-right-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                            </svg> Entscheide, ob diese nur unter freunden oder für alle sichtbar ist. <br>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi-bi-caret-right-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                            </svg> lust auf Anonymität? Ganz einfach, nur mit einem klick einstellbar. <br>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi-bi-caret-right-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                            </svg> Lass die Quate deiner Umfragen ganz einfach berechnen. <br> <br>
+
+                        <p class="extra-info">
+                            Hier hast du und andere euren freien lauf, kommentiert, speichert, liket und chattet herum
+                            <br>
+                            Wenn du mehr über unsere Sicherheitsrechtlinien und verbote wissen möchtest, was du
+                            überhaupt alles <br> schreiben und posten darfst dann klicke <a href="">hier</a>.
+                        </p>
+                        </p>
+
+                    </div>
+
+                    <img src="../../resources/assets/img's/survey-creation_img.PNG" alt="" class="Info-Imgs"
+                        width="620px" height="390px">
+
+                </div>
+
+
+                <div id="info-News-Container" class="info-Container">
+                    <div id="info-left-text-Container">
+                        <h1 class="info-headline">Deine Posts!!</h1>
+                        <p>Du weißt mal nicht wann ein neues update rauskommt oder wann die Seite lahmgelegt wird ? Kein
+                            Problem, auf <br> unsere
+                            News Seite die immer offen steht, auch bei updates oder wartungsarbeiten, findest du alle
+                            infos rund <br> um Probleme.
+                            Du Kannst uns gerne über die News Seite oder über den Support kontaktieren, <br> bei fragen
+                            kannst du dich auch an die internationallen kommentare dort wenden. <br> <br>
+
+                            Have fun :)
+                        </p>
+                    </div>
+
+                    <img src="../../resources/assets/img's/InfiniSurv_Posts_img.png" alt="" id="Info-left-Img"
+                        width="620px" height="390px">
+
+                </div>
+
+                <div id="info-Profil-Container" class="info-Container">
+                    <div class="info-text-Container">
+                        <h1 class="info-headline">Dein Profil Design</h1>
+                        <p>Einfach Anmelden und diese Vorteile kostenlos mitnehmen <br>
+                        <ul>
+                            <li>Dark/White Modus</li>
+                            <li>Umfragen Erstellen</li>
+                            <li>umfragen speichern / liken</li>
+                            <li>Kommentare schreiben</li>
+                            <li>Freunde adden / Gruppen erstellen</li>
+                        </ul>
+
+                        </p>
+
+
+                    </div>
+
+                    <img src="../../resources/assets/img's/survey-creation_img.PNG" alt="" class="Info-Imgs"
+                        width="620px" height="390px">
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </main>
+
+
+    <footer>
+        <div class="footer-Container">
+
+            <div id="Company-Container" class="footer-links-Container">
+                <h2>Company</h2>
+
+                <p class="link"><a href="Umfrage.html">About us</a></p>
+                <p class="link"><a href="AboutUs.html">FAQ</a></p>
+                <p class="link"><a href="AboutUs.html">Members</a></p>
+                <p class="link"><a href="AboutUs.html">Member Applications</a></p>
+                <p class="link"><a href="AboutUs.html">Imprint</a></p>
+                <p class="link"><a href="AboutUs.html">About our Website</a></p>
+
+
+            </div>
+
+            <div id="Data safety-Container" class="footer-links-Container">
+                <h2>Data safety</h2>
+                <p class="link"><a href="AboutUs.html">AGB</a></p>
+                <p class="link"><a href="AboutUs.html">bans</a></p>
+                <p class="link"><a href="AboutUs.html">safety regulations</a></p>
+
+            </div>
+
+            <div id="Copyright-Container" class="footer-links-Container">
+                <h2>Copyright</h2>
+                <p class="link"><a href="AboutUs.html">Our way</a></p>
+
+                <div id="Network-footer-links">
+                    <p class="Network-link"><a href="">insta</a></p>
+                    <p class="Network-link"><a href="">facebook</a></p>
+                    <p class="Network-link"><a href="">Tiktok</a></p>
+                    <p class="Network-link"><a href="">Blog</a></p>
+                    <p class="Network-link"><a href="">Twitter</a></p>
+                    <p class="Network-link"><a href="">Linkedln</a></p>
+                </div>
+
+                <div id="Copyright-footer-license">
+                    <p>Copyright under ML studio © 2023 <br>
+                        licensed under ING-DiBa Bank <a href="">CC DE-FA</a> lin.:2023.23.10.:65BB23 </p>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script type="module">
+        import { forwardingLocationID, forwardingSignUpData } from "../global_dependencys/global_scripts/main_script.js";
+    </script>
+    <script src="../global_dependencys/global_scripts/security-measures_scripts/input_sanatizing_script.js"></script>
+
+
+</body>
+
+</html>

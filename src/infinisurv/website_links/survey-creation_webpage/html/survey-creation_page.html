@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpinionPoll</title>
+  <link rel="stylesheet" href="../css/survey-creation_style.css" />
+  <link rel="stylesheet" href="../../../global_dependencys/global_styles/header_style.css" />
+  <link rel="stylesheet" href="../../../global_dependencys/global_styles/footer_style.css" />
+  <link rel="stylesheet" href="../../../global_dependencys/global_styles/bootstrap_styles/main-bootstrap_style.css" />
+  <link rel="stylesheet" href="../../../global_dependencys/global_styles/login_style.css" />
+</head>
+
+<body onload="import('../../../global_dependencys/global_scripts/main_script.js').then(module => {module.callLoginHandler(event)}).catch(err => {console.error(err);})">
+  <header>
+    <div class="nav">
+      <input type="checkbox" id="nav-check" />
+      <div class="nav-header">
+        <div class="nav-title">InfiniSurv</div>
+      </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <button class="opinion_poll_header_link">
+          <a href="../../surveypost_webpage/html/survey-post_page.html" target="_blank">Posts</a>
+        </button>
+        <a>SurveyCreation</a>
+        <a href="http://stackoverflow.com/users/4084003/" target="_blank">News</a>
+        <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">Support</a>
+        <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">Profile</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="main-Container">
+      <!-- ---------------------Login Pop-Up bereich------------------------------------------- -->
+      <div class="login-Container" id="login-Container-Visbility">
+        <div class="login-Content">
+            <input type="checkbox" id="chk" aria-hidden="true" />
+
+            <div class="signup">
+                <form onsubmit="import('../../../global_dependencys/global_scripts/main_script.js').then(module => {module.forwardingSignUpData(event)}).catch(err => {console.error(err);}); return false">
+                    <label class="login-label" for="chk" aria-hidden="true">Sign up</label>
+                    <input class="login-input" id="firstname" name="txt" placeholder="Firstname*" required
+                        size="10" />
+                    <input class="login-input" id="lastname" name="txt" placeholder="Lastname*" required />
+                    <input class="login-input" id="birthday" type="date" name="txt" placeholder="birthday*"
+                        required />
+                    <input class="login-input" id="username" name="txt" placeholder="Username*" required />
+                    <input class="login-input" id="email" type="email" name="email" placeholder="Email*"
+                        required />
+                    <input class="login-input" id="password" type="password" name="pswd" placeholder="Password*"
+                        required />
+                    <button class="login-button">Sign up</button>
+                </form>
+            </div>
+           
+
+            <div class="login">
+                
+                <form onsubmit="import('../../../global_dependencys/global_scripts/main_script.js').then(module => {module.forwardingLoginData(event)}).catch(err => {console.error(err);}); return false">
+                    <label class="login-label" for="chk" aria-hidden="true">Login</label>
+                    <h4 id="loggedIn-display" class="loggedIn-false">Angemeldet</h4>
+                    <input class="login-input" value="" id="login-email" type="email" name="email"
+                        placeholder="Email" required="" />
+                    <input class="login-input" value="" id="login-password" type="password" name="pswd"
+                        placeholder="Password" required="" />
+                    <button class="login-button">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+      <!-- ---------------------Login Pop-Up bereich Ende------------------------------------------- -->
+
+      <div class="opinion_Poll-Creater-Container">
+        <div class="create-Opinion_Poll-Container">
+          <div class="opinion_Poll-header">
+            <input id="themeInput" value="" type="text" placeholder="Your topic" size="28" maxlength="80" />
+
+            <button class="header-btn"
+              onclick="import('../script/main_script.js').then(modules => modules.handleInputCreationRequest()).catch(error => console.error('Error'+error)) ">
+              Create Opinion fields
+            </button>
+
+            <button class="header-btn"
+              onclick="import('../script/main_script.js').then(modules => modules.handleResetRequest(event)).catch(error => console.error('Error'+error)) ">
+              delete all
+            </button>
+          </div>
+
+          <div id="createdInput-Container"></div>
+          <button id="publish-Btn"
+            onclick="import('../script/main_script.js').then(modules => modules.handlePublicationRequest(event)).catch(error => console.error('Error'+error)) ">
+            Publish
+          </button>
+          <!--href="/site/Welcome" ??? button haate ein href aus irgendeinem grund-->
+          <section class="functioning_dispatch-info-Container">
+            <p class="functioning_dispatch-info">
+              Ihre Sendung ist fehlgeschlagen !
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module">
+    import {
+      handleInputCreationRequest,
+      handlePublicationRequest,
+      handleResetRequest,
+    } from "../script/main_script.js";
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+[
+    {
+        "LocID": 0.12,
+        "urlLink": "../../infinisurv/website_links/surveypost_webpage/html/survey-post_page.html"
+    },
+    {
+        "LocID": 0.24,
+        "urlLink": "../../infinisurv/website_links/survey-creation_webpage/html/survey-creation_page.html"
+    },
+    {
+        "LocID": 0.36,
+        "urlLink": "../HTML/News.html"
+    },
+    {
+        "LocID": 0.48,
+        "urlLink": "../HTML/Support.html"
+    },
+    {
+        "LocID": 0.60,
+        "urlLink": "../HTML/Profile.html"
+    },
+    {
+        "LocID": 0.72,
+        "urlLink": ""
+    }
+
+]

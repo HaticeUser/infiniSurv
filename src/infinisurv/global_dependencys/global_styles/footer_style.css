@@ -1,0 +1,79 @@
+
+/*
+-------------------------- Footer Bereich ------------------------
+*/
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    margin: 0px;
+    font-family: 'segoe ui';
+
+  }
+
+
+.footer-Container{
+    display: flex;
+    background-color: #262424;
+    border-top: 3px solid grey;
+    flex-direction: row;
+    justify-content: space-between;
+  
+  }
+  
+  .footer-Container > .footer-links-Container{
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+  }
+  
+  .footer-links-Container > .link > a{
+    text-decoration: none;
+    
+  }
+  .footer-links-Container > .link > a:link{
+    color: darkred;
+  
+  }
+  
+  .footer-links-Container > .link > a:hover{
+    color: #af2929;
+  
+  }
+  
+  
+  .footer-links-Container > .link > a:visited{
+    color: darkblue;
+  
+  }
+  
+  #Copyright-footer-license{
+    position: relative;
+    top: 120px ;
+    font-size: 10px;
+  }
+  
+  #Network-footer-links{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 155px;
+    right: 650px;
+    gap: 20px;
+  
+  }
+  
+  .Network-link > a{
+    text-decoration: none;
+    color: #7e7878;
+    font-size: 14px;
+  }
+  
+  

@@ -1,0 +1,100 @@
+
+
+body {
+
+    background-image: linear-gradient(to left, #7f5cce, #b393d3);
+
+}
+
+/*
+-------------------------- Main Bereich ------------------------
+*/
+
+
+.Opinion_Oracle_Posts {
+
+    display: flex;
+    position: relative;
+    justify-content: center;
+
+}
+
+#Opinion_Poll-Posts-Container {
+    position:relative;
+    top: 10px;
+    padding: 25px;
+    margin-bottom: 100px;
+}
+
+
+
+
+.posted-Opinion_Poll {
+    margin-top: 60px;
+    position: relative;
+    background-color: orange;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    padding: 20px;
+    width: 600px;
+    height: 320px;
+    border-radius: 10px;
+    flex-direction: column;
+  
+}
+
+.OpinionInput-Container {
+    display: flex;
+    position: relative;
+    top: 20px;
+    background-color: grey;
+    padding: 7px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+
+
+}
+
+#header-Opinion_Poll {
+    text-align: center;
+    align-items: center;
+}
+
+.themeInput {
+
+    background-color: orange;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid black;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 15px;
+    color: black;
+
+
+}
+
+
+
+.form-check-input {
+    position: absolute;
+    top: -9.5px;
+    right: 2px;
+    font-size: 41px;
+}
+
+.opinionInput {
+    margin-left: 10px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    color: black;
+}
+
+#header-Opinion_Poll {}
+
+.opinion_Poll-section {}
+
+
+
+/*-----------------------------------------------------------------------------------*/

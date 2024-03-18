@@ -1,0 +1,171 @@
+
+/*
+-------------------------- Header Bereich ------------------------
+*/
+
+*{
+    padding: 0px;
+    margin: 0px;
+   
+}
+
+
+  .nav {
+    height: 100px;
+    width: 100%;
+    background-image: linear-gradient(to left, #553c9a, #b393d3);
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    z-index: 2;
+  }
+
+  .nav > .nav-header {
+    display: inline;
+  }
+
+  .nav > .nav-header > .nav-title {
+    display: inline-block;
+    margin-top: 8px;
+    color: rgb(56, 110, 94);
+    font-size: 45px;
+    left: 20px;
+    font-weight:800 ;
+    position: relative;
+    left: 20px;
+  }
+
+  .nav > .nav-btn {
+    display: none;
+  }
+
+
+  .nav > .nav-links {
+    display: inline;
+    float: right;
+    border: 1px solid black;
+    font-size: 18px;
+    position: absolute;
+    right: 0px;
+    top: 37px;
+    border: 1px solid black;
+    border-top-left-radius: 200px;
+    border-bottom: none;
+    padding: 5px;
+  }
+
+  .opinion_poll_header_link{
+    background-color:transparent;
+    border: none;
+    font-size: larger;
+    padding: 0px;
+    border-top-left-radius: 200px;
+  }
+
+  .opinion_poll_header_link:hover{
+    background-color: #6853a0;
+    border-top-left-radius: 200px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  }
+
+  .opinion_poll_header_link > a{
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: #efefef;
+    font-weight: 600;
+    text-decoration: none ;
+    margin-right: 15px;
+    margin-left: 15px;
+    font-size: 20px;
+  }
+
+
+
+  .nav > .nav-links > a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: #efefef;
+    font-weight: 600;
+    text-decoration: none ;
+    margin-right: 15px;
+    margin-left: 15px;
+    font-size: 20px;
+  }
+
+  .nav > .nav-links > a:hover {
+    background-color: #6853a0;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  }
+
+  .nav > #nav-check {
+    display: none;
+  }
+
+
+  
+
+  @media (max-width: 900px) {
+    .nav .nav-btn {
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      top: 50px;
+    }
+    
+    .nav .nav-btn label {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      padding: 13px;
+    }
+    
+    .nav .nav-btn label:hover,
+    .nav #nav-check:checked ~ .nav-btn label {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    
+    .nav .nav-btn label span {
+      display: block;
+      width: 25px;
+      height: 10px;
+      border-top: 2px solid #eee;
+    }
+    
+    .nav .nav-links {
+      border-top-left-radius: 0;
+      border-radius: 0;
+      border: none;
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: #333;
+      height: 0;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 95px;
+      left: 0;
+    }
+    
+    .nav .nav-links a {
+      display: block;
+      width: 90%;
+      border-top-left-radius: 0;
+      border: none;
+    }
+    
+    .nav #nav-check:not(:checked) ~ .nav-links {
+      height: 0;
+    }
+    
+    .nav #nav-check:checked ~ .nav-links {
+      height: calc(92vh - 50px);
+      overflow-y: auto;
+    }
+  
+    .container {
+      font-size: 18px;
+    }
+  }
+  

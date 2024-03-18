@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpinionOracale</title>
+  <link rel="stylesheet" href="../css/survey-post_style.css" />
+  <link rel="stylesheet" href="../../../global_dependencys/global_styles/header_style.css" />
+  <link rel="stylesheet" href="../../../global_dependencys/global_styles/footer_style.css" />
+  <link rel="stylesheet" href="../../../global_dependencys/global_styles/bootstrap_styles/main-bootstrap_style.css" />
+  <link rel="stylesheet" href="../../../global_dependencys/global_styles/login_style.css" />
+  
+</head>
+
+<body onload="import('../../../global_dependencys/global_scripts/main_script.js').then(module => {module.callLoginHandler(event)}).catch(err => {console.error(err);})">
+  <header>
+    <div class="nav">
+      <input type="checkbox" id="nav-check" />
+      <div class="nav-header">
+        <div class="nav-title">InfiniSurv</div>
+      </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <button class="opinion_poll_header_link"><a>Posts</a></button>
+        <a href="../../survey-creation_webpage/html/survey-creation_page.html" target="_blank">SurveyCreation</a>
+        <a href="http://stackoverflow.com/users/4084003/" target="_blank">News</a>
+        <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">Support</a>
+        <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">Profile</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ---------------------Login Pop-Up bereich------------------------------------------- -->
+    <div class="login-Container" id="login-Container-Visbility">
+      <div class="login-Content">
+          <input type="checkbox" id="chk" aria-hidden="true" />
+
+          <div class="signup">
+              <form onsubmit="import('../global_dependencys/global_scripts/main_script.js').then(module => {module.forwardingSignUpData(event)}).catch(err => {console.error(err);}); return false">
+                  <label class="login-label" for="chk" aria-hidden="true">Sign up</label>
+                  <input class="login-input" id="firstname" name="txt" placeholder="Firstname*" required
+                      size="10" />
+                  <input class="login-input" id="lastname" name="txt" placeholder="Lastname*" required />
+                  <input class="login-input" id="birthday" type="date" name="txt" placeholder="birthday*"
+                      required />
+                  <input class="login-input" id="username" name="txt" placeholder="Username*" required />
+                  <input class="login-input" id="email" type="email" name="email" placeholder="Email*"
+                      required />
+                  <input class="login-input" id="password" type="password" name="pswd" placeholder="Password*"
+                      required />
+                  <button class="login-button">Sign up</button>
+              </form>
+          </div>
+         
+
+          <div class="login">
+              
+              <form onsubmit="import('../global_dependencys/global_scripts/main_script.js').then(module => {module.forwardingLoginData(event)}).catch(err => {console.error(err);}); return false">
+                  <label class="login-label" for="chk" aria-hidden="true">Login</label>
+                  <h4 id="loggedIn-display" class="loggedIn-false">Angemeldet</h4>
+                  <input class="login-input" value="" id="login-email" type="email" name="email"
+                      placeholder="Email" required="" />
+                  <input class="login-input" value="" id="login-password" type="password" name="pswd"
+                      placeholder="Password" required="" />
+                  <button class="login-button">Login</button>
+              </form>
+          </div>
+      </div>
+  </div>
+    <!-- ---------------------Login Pop-Up bereich Ende------------------------------------------- -->
+
+    <div class="Opinion_Oracle_Posts">
+      <div id="Opinion_Poll-Posts-Container">
+        <div id="user-Posted-Opinion_Poll" class="posted-Opinion_Poll">
+          <div id="header-Opinion_Poll">
+            <input class="themeInput" disabled type="text" size="60" value="Wie cool sind Autos?" />
+          </div>
+          <section class="opinion_Poll-section">
+            <div class="OpinionInput-Container">
+              <input class="opinionInput" disabled type="text" size="30" value="cool" />
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+              </div>
+            </div>
+          </section>
+          <section class="opinion_Poll-section">
+            <div class="OpinionInput-Container">
+              <input class="opinionInput" disabled type="text" size="30" value="sehr cool" />
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+              </div>
+            </div>
+          </section>
+          <section class="opinion_Poll-section">
+            <div class="OpinionInput-Container">
+              <input class="opinionInput" disabled type="text" size="30" value=" super cool" />
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+              </div>
+            </div>
+          </section>
+          <section class="opinion_Poll-section">
+            <div class="OpinionInput-Container">
+              <input class="opinionInput" disabled type="text" size="30" value="cool" />
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!--            ----------------------------------------->
+
+        <div id="user-Posted-Opinion_Poll" class="posted-Opinion_Poll">
+          <div id="header-Opinion_Poll">
+            <input class="themeInput" disabled type="text" size="60" value="Diesel oder Super?" />
+          </div>
+          <section class="opinion_Poll-section">
+            <div class="OpinionInput-Container">
+              <input class="opinionInput" disabled type="text" size="30" value="Super" />
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+              </div>
+            </div>
+          </section>
+          <section class="opinion_Poll-section">
+            <div class="OpinionInput-Container">
+              <input class="opinionInput" disabled type="text" size="30" value="Diesel" />
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!--            ---------------------------------------------->
+
+          <div id="user-Posted-Opinion_Poll" class="posted-Opinion_Poll">
+            <div id="header-Opinion_Poll">
+              <input class="themeInput" disabled type="text" size="60" value="SQL als Flugzeug, was sagt ihr?" />
+            </div>
+            <section class="opinion_Poll-section">
+              <div class="OpinionInput-Container">
+                <input class="opinionInput" disabled type="text" size="30" value="Unlogisch aber funny" />
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                </div>
+              </div>
+            </section>
+            <section class="opinion_Poll-section">
+              <div class="OpinionInput-Container">
+                <input class="opinionInput" disabled type="text" size="30" value="Ja machen wir" />
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                </div>
+              </div>
+            </section>
+            <section class="opinion_Poll-section">  
+              <div class="OpinionInput-Container">
+                <input class="opinionInput" disabled type="text" size="30" value="Neeee lieber nicht" />
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                </div>
+              </div>
+            </section>
+          </div>
+  
+          <!--            ---------------------------------------------->
+
+        <div id="user-Posted-Opinion_Poll" class="posted-Opinion_Poll">
+          <div id="header-Opinion_Poll">
+            <input class="themeInput" disabled type="text" size="60" value="Welche Haarfarbe hast du ?" />
+          </div>
+          <section class="opinion_Poll-section">
+            <div class="OpinionInput-Container">
+              <input class="opinionInput" disabled type="text" size="30" value="Blond" />
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+              </div>
+            </div>
+          </section>
+          <section class="opinion_Poll-section">
+            <div class="OpinionInput-Container">
+              <input class="opinionInput" disabled type="text" size="30" value="Braun" />
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+              </div>
+            </div>
+          </section>
+          <section class="opinion_Poll-section">
+            <div class="OpinionInput-Container">
+              <input class="opinionInput" disabled type="text" size="30" value="schwarz" />
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+              </div>
+            </div>
+          </section>
+          <section class="opinion_Poll-section">
+            <div class="OpinionInput-Container">
+              <input class="opinionInput" disabled type="text" size="30" value="anderes" />
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- // erstes Prototyp, Coden-->
+    <!--
+ <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+        <label class="form-check-label" for="flexCheckChecked">
+
+        </label>
+    </div>
+-->
+  </main>
+ <!-------------------------------------FOOTER------------------------------------------------------------->
+  <footer>
+    <div class="footer-Container">
+
+        <div id="Company-Container" class="footer-links-Container">
+            <h2>Company</h2>
+
+            <p class="link"><a href="Umfrage.html">About us</a></p>
+            <p class="link"><a href="AboutUs.html">FAQ</a></p>
+            <p class="link"><a href="AboutUs.html">Members</a></p>
+            <p class="link"><a href="AboutUs.html">Member Applications</a></p>
+            <p class="link"><a href="AboutUs.html">Imprint</a></p>
+            <p class="link"><a href="AboutUs.html">About our Website</a></p>
+
+
+        </div>
+
+        <div id="Data safety-Container" class="footer-links-Container">
+            <h2>Data safety</h2>
+            <p class="link"><a href="AboutUs.html">AGB</a></p>
+            <p class="link"><a href="AboutUs.html">bans</a></p>
+            <p class="link"><a href="AboutUs.html">safety regulations</a></p>
+
+        </div>
+
+        <div id="Copyright-Container" class="footer-links-Container">
+            <h2>Copyright</h2>
+            <p class="link"><a href="AboutUs.html">Our way</a></p>
+
+            <div id="Network-footer-links">
+                <p class="Network-link"><a href="">insta</a></p>
+                <p class="Network-link"><a href="">facebook</a></p>
+                <p class="Network-link"><a href="">Tiktok</a></p>
+                <p class="Network-link"><a href="">Blog</a></p>
+                <p class="Network-link"><a href="">Twitter</a></p>
+                <p class="Network-link"><a href="">Linkedln</a></p>
+            </div>
+
+            <div id="Copyright-footer-license">
+                <p>Copyright under ML studio © 2023 <br>
+                    licensed under ING-DiBa Bank <a href="">CC DE-FA</a> lin.:2023.23.10.:65BB23 </p>
+            </div>
+
+
+
+        </div>
+
+    </div>
+</footer>
+ <!------------------------------------------FOOTER------------------------------------------------------------->
+ 
+
+  <script type="module">
+    // import { alert } from '../../../node_modules/bootstrap/js/src/alert.js'
+
+    import { handleLocationID } from "../../../global_dependencys/global_scripts/main_script.js";
+  </script>
+</body>
+
+</html>

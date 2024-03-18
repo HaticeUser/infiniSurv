@@ -1,0 +1,149 @@
+
+
+body{
+    background-image: linear-gradient(to left, #7f5cce, #b393d3);
+}
+
+/*
+-------------------------- Main Bereich ------------------------
+*/
+
+.opinion_Poll-Creater-Container{
+
+    background-color: grey;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.opinion_Poll-Creater-Container > .create-Opinion_Poll-Container{
+    position: absolute;
+    top: 100px;
+    padding: 25px;
+}
+
+.create-Opinion_Poll-Container > .format{
+
+}
+
+
+.opinion_Poll-header{
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 40px;
+
+}
+
+.opinion_Poll-header > .header-btn{
+    font-family: Arial;
+    padding: 3px;
+    font-size: 15px;
+    font-weight: bold;
+    border: 2px solid #c78d76;
+    border-radius: 4px;
+    background-color: #ffc143;
+    cursor: pointer;
+
+
+}
+
+.opinion_Poll-header > .header-btn:hover{
+
+    border: 2px solid #e7a992;
+    background-color: #e0a12e;
+
+
+
+}
+
+#createdInput-Container{
+
+    position: absolute;
+    background-color:orange;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    padding: 20px;
+    width: 600px;
+    height: 320px;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.OpinionInput-Container{
+    position:relative;
+    top: 20px;
+    background-image: linear-gradient(to left, #7f5cce, #b393d3);
+    padding: 7px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+
+
+}
+
+.deleteInput-btn{
+    position: absolute;
+    right: 15px;
+    top: 7px;
+    padding: 3px;
+    border: none;
+    background-color: transparent;
+    font-weight:bolder ;
+    color: #960303;
+    font-size: large;
+}
+
+
+
+#themeInput{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid orange ;
+    font-size: large;
+    margin-right: 18px;
+    background-color: transparent;
+}
+
+.input-Container{
+    margin-bottom: 25px;
+
+}
+.opinionInput{
+    font-size: 18px ;
+    padding: 3px;
+    margin-left: 8px;
+    outline-color: orange;
+    border: 2px solid #9b6708;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid darkorange;
+
+}
+
+
+
+
+#publish-Btn{
+    position: relative;
+    top: 235px;
+    left: 220px;
+    background-color: #a24b4b;
+    font-family: Arial;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #c78d76;
+    border-radius: 7px;
+    width: 150px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+
+.functioning_dispatch-info-Container{
+
+
+}
+
+.functioning_dispatch-info-Container > .functioning_dispatch-info{
+
+}
+
