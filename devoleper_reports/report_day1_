@@ -8,6 +8,7 @@ Result: Works (Needs bug Fixes)
 
 Bug Fixes:
 +- Sanatizing-Handler doesent work fully
++--> So Connection With Backend dosent work, Connection breaks beforehand, because of wrong returning from Sanatizer-file.
 
 New Ideas:
 Ideas Written in Notion, ideas being of Security ofspring.
