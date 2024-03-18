@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
-@CrossOrigin (origins = "http://127.0.0.1:5500")
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 @RestController
 public class RegristrationController {
 
@@ -27,9 +27,8 @@ public class RegristrationController {
     @PostMapping("/signup")
     public ResponseEntity<String> signUpController(@RequestBody UserModel user){
 
-    return signUpService.createUser(user);
+        return signUpService.createUser(user);
 
     }
 
 }
-

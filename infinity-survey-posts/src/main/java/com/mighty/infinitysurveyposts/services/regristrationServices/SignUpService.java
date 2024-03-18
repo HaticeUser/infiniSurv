@@ -3,6 +3,8 @@ package com.mighty.infinitysurveyposts.services.regristrationServices;
 
 import com.mighty.infinitysurveyposts.repositorys.UserRepository;
 import com.mighty.infinitysurveyposts.models.UserModel;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +17,7 @@ public class SignUpService {
 
     @Autowired
     private UserRepository userRepository;
-
+    private static final Logger logger = LogManager.getLogger(SignUpService.class);
     public ResponseEntity<String> createUser(UserModel user) {
         user.setFirstname(user.getFirstname());
         user.setLastname(user.getLastname());
@@ -29,9 +31,27 @@ public class SignUpService {
         user.setLast_login(user.getLast_login());
         user.setCreated_At(user.getCreated_At());
 
-        lastUserDataAssignment(user);
-        userRepository.save(user);
-        return new ResponseEntity<String>("User Saved", HttpStatus.OK) ;
+        UserModel userEmail = userRepository.findByEmail(user.getEmail());
+
+
+        if(userEmail != null){
+            if(!user.getEmail().equals(userEmail.getEmail())){
+                lastUserDataAssignment(user);
+                userRepository.save(user);
+                logger.debug("Added user : {}", () -> user);
+                return new ResponseEntity<String>("User Saved", HttpStatus.OK) ;
+            }else{
+                return new ResponseEntity<String>("Email already exists", HttpStatus.OK) ;
+            }
+
+        }else{
+            lastUserDataAssignment(user);
+            userRepository.save(user);
+            logger.debug("Added user : {}", () -> user);
+            return new ResponseEntity<String>("User Saved", HttpStatus.OK) ;
+        }
+
+
     }
 
     public void lastUserDataAssignment (UserModel user){
@@ -40,4 +60,3 @@ public class SignUpService {
         user.setLast_login(currentDate);
     }
 }
-
