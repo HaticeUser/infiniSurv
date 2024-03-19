@@ -4,27 +4,28 @@ export class SurveryCreation {
       "createdInput-Container"
     );
     this.theme_Input = document.getElementById("themeInput");
-    this.theme_Input_ID = 0;
+    this.theme_Input_ID = 0; // wird nicht gehen
 
     this.input = document.createElement("input");
     this.deleteButton = document.createElement("input");
     this.opinionInput_Container = document.createElement("div");
 
     this.createdInput = 0;
-    this.generated_ObjectID = 111.1;
-    this.inputID = 1;
+    this.generated_ObjectID = 111.1; // wird nicht gehen
+    this.inputID = 1; // wird nicht gehen
     this.likes = 0;
     this.savings = 0;
 
     this.user_storings_disabled = true;
     this.likes_disabled = false;
 
-    this.opinionInput_Array = [];
+    this.opinionInput_Array = []; 
     this.deleteButtons = [];
-    this.inputs = [];
-    this.inputIDs = [];
+    this.inputs = []; // wird nicht gehen
+    this.inputIDs = [];  // wird nicht gehen
     this.input_Data = [];
 
+    //  Vielleicht von meiner Datenbank 
 
   }
 
@@ -40,7 +41,7 @@ export class SurveryCreation {
       this.deleteButton.classList.add("deleteInput-btn");
       this.input.type = "text";
       this.input.placeholder = "Answer";
-      this.input.size = 30;
+      this.input.size = 40;
       this.input.classList.add("opinionInput");
       this.input.id = this.inputID++;
       this.inputIDs.push(this.input.id);
@@ -75,11 +76,8 @@ export class SurveryCreation {
 
     let inputData = {
       input_Theme_Value: this.theme_Input.value,
-      input_Theme_ID: this.theme_Input_ID,
-      input: {
-        input_ValueID: [],
-        answers_Length: this.createdInput,
-      },
+      input_Theme_ID: this.theme_Input_ID,  // wird nicht gehen
+      input_Values: [],
       likes: this.likes,
       likes_disabled: this.likes_disabled,
       user_storings: this.savings,
@@ -97,8 +95,8 @@ export class SurveryCreation {
     }
 
     this.input_Data.push(inputData);
-    this.theme_Input_ID++;
-    this.generated_ObjectID += 111.1;
+    this.theme_Input_ID++; // wird nicht gehen
+    this.generated_ObjectID += 111.1; // wird nicht gehen
     console.log(inputData);
     // this.sendDataToBackend(inputData);
   }
@@ -135,27 +133,4 @@ export class SurveryCreation {
     this.opinionInput_Array = [];
   }
 
-  // async fetchJsonLocationData(){
-  //     try{
-  //        const response= await fetch("http://localhost:8080/createuser",{
-  //         method: 'POST',
-  //         headers: {
-  //             'Content-Type': 'application/json'
-  //         },
-  //         body: JSON.stringify(this.input_Data)
-
-  //     });
-
-  //     if(!response.ok){
-  //         throw new Error("Fehler beim senden der Daten");
-  //     }
-  //     const responseData= await response.text();
-  //     console.log(this.input_Data);
-  //     console.log("Antwort vom Server: " + responseData);
-
-  //     }catch(err){
-  //         console.error(err)
-  //     }
-
-  // }
 }

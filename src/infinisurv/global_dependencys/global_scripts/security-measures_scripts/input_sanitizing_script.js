@@ -14,13 +14,13 @@ export class InputSanitizing {
   }
 
   readSignUpInput(ArrayData) {
-    const specialCharacter = /[&<>|+;:,]/g;
+    const specialCharacter = /[&<>|+;:,]/gi; //fixes wie z.b SQL injections  /[&<>|+;:,]select/gi
 
     try {
       for (let index = 0; index < ArrayData.length; index++) {
-        let Arraystandpunkt = ArrayData[index];
+        let Arraystandpunkt = ArrayData[index].toLowerCase();
         let Sanatized = Arraystandpunkt.replace(specialCharacter, "");
-        alert("Did Work:" + "try: " + index + "sanatized: " + Sanatized );
+        //alert("Did Work:" + "try: " + index + "sanatized: " + Sanatized );
 
         // ArrayData[index] != Arraystandpunkt &&
         if(index >= ArrayData.length - 1){
@@ -32,7 +32,7 @@ export class InputSanitizing {
       
     } catch (error) {
       console.error("Problems with sanatizing: ", error);
-      throw "Oh you hacked me, here youre data: Too dumb to hack :)";
+      throw "Oh you hacked me, here your data: Too dumb to hack :)";
     }
   }
 
