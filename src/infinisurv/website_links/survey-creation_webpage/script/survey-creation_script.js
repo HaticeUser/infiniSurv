@@ -25,7 +25,7 @@ export class SurveryCreation {
     this.inputIDs = [];  // wird nicht gehen
     this.input_Data = [];
 
-    //  Vielleicht von meiner Datenbank 
+    //  Vielleicht von meiner Datenbank den größten stant des innhalts holen übergebn, hier plus rechnen und dann weiter übergeben
 
   }
 

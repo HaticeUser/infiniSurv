@@ -1,0 +1,38 @@
+Report Day: 18.03.2024 (Day 1 Of Report)
+----------------------------------------
+
++- finished setting up the Sanatizing-Handler
++--> By writing the Sanatizing-Code + Testing 
++--> Connection building with Sanatizing-Handler and Sign-up-Handler
+Result: Works (Needs bug Fixes)
+
+Bug Fixes:
++- Sanatizing-Handler doesent work fully
++--> So Connection With Backend dosent work, Connection breaks beforehand, because of wrong returning from Sanatizer-file.
+
+New Ideas:
+Ideas Written in Notion, ideas being of Security ofspring.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+Report Day: 19.03.2024 (Day 2 Of Report)
+----------------------------------------
+!!!! Lots of Meetings, couldnt work on Project !!!!
++- Found Logic Problems in survey-creation_script.js
++--> survey-creation_script.js fixed some logic problems
++----> Fixed problem in Database NO TABLE TANSWERBOX (DELETE THIS TABLE), Array answer field does the job now in tpost.
+
+
+Bug Fixes:
++- Sanatizing-Handler doesent work fully **** Still dosent work
++---> So Connection With Backend dosent work, Connection breaks beforehand, because of wrong returning from Sanatizer-file.
++- Ask Monika, if backend Services should have if quzestions and things like that or not??
+
+New Ideas:
+Ideas Written in Notion, ideas being of Security ofspring.
+Fix Code of survey-creation_script.js, it has some logic problems.
+IDEA IN = survey-creation_script.js//  Vielleicht von meiner Datenbank den größten stant des innhalts holen übergebn, hier plus rechnen und dann weiter übergeben
+IDEA IN = input_ <---(!changename! - not _)sanatizing_script.js //fixes wie z.b SQL injections  /[&<>|+;:,]select/gi
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
