@@ -12,17 +12,12 @@ export class SurveryCreation {
     this.deleteButton = document.createElement("input");
     this.opinionInput_Container = document.createElement("div");
 
-    this.createdInput = 0; // Brauchen wir
-    this.opinionInput_Array = []; // Brauchen wir
-    this.deleteButtons = []; // Brauchen wir
-    this.input_Data = []; // Brauchen wir
+    this.createdInput = 0; 
+    this.opinionInput_Array = []; 
+    this.deleteButtons = []; 
+    this.input_Data = []; 
     this.inputs = [];
     
-    //überdenken ob ihc es so behalte ode rimmbackend einfahc definiere
-    this.likes = 0; // im backend machen ?
-    this.savings = 0; // im backend machen ?
-    this.user_storings_disabled = true; // brauchen wir hier vieleicht garnicht ?
-    this.likes_disabled = false;
   }
 
   handleHTMLCreation() {
@@ -39,7 +34,7 @@ export class SurveryCreation {
 
   createInputs() {
     try {
-      if (this.createdInput < 5) {
+      if (this.createdInput < 4) {
         this.createdInput++;
         this.input = document.createElement("input");
         this.opinionInput_Container = document.createElement("div");
@@ -92,24 +87,41 @@ export class SurveryCreation {
     }
   }
 
+  //Beim answerbox nohc die auswertungen mit reinschbeichern und dementsprechend z.b Man hat Zwei ANtworten im Fronmtened im post
+  // "Katze oder hund?"
+  // input 1 hat "katze"
+  // input 2 hat "hund"
+  // Und ein User wählt jetzt z.b Hund, dann muss der input entsprechend eine id haben damit man weiß ok, welches gehört jetzt welchem input?
+  //Also wo muss der vote jetzt daszugehören ?? zu welchem input und woher weiß ioch das dann?
+  // Hund hätte ja jetzt 1 vote wie lasse ich es im backend darstellen?
+
+
 
   saveData() {
 
     try {
       let inputData = {
         question: this.theme_Input.value,
-        answers: [],
+        answers: {
+          answerOne:"",
+          answerTwo:"",
+          answerThree:"",
+          answerFour:"",
+        },
         likes: this.likes,
         likes_disabled: this.likes_disabled,
         user_storings: this.savings,
-        user_storings_disabled: this.user_storings_disabled,
+        user_storings_disabled: this.user_storings_disabled, 
       };
+
+      // Geht auch einfacher, finde weg wie und was ist mit leeren inputs z.b?? wie wird das üpberprüft?
+      inputData.answers.answerOne = this.inputs[0].value;
+      inputData.answers.answerTwo = this.inputs[1].value;
   
-      for (let i = 0; i < this.createdInput; i++) {
-       inputData.answers.push(this.inputs[i].value);
-      }
-  
+      // for (let i = 0; i < this.createdInput; i++) {
+      //  inputData.answers.push();
       
+      // }
       console.log(inputData);
       return inputData;
     } catch (error) {
@@ -125,7 +137,7 @@ export class SurveryCreation {
     if (this.input.value != "" && this.theme_Input.value != "") {
       try {
         let dataSaved = this.saveData();
-        setTimeout(this.apiInterfaceHandler.postsApiHandler(dataSaved),1000);
+        // setTimeout(this.apiInterfaceHandler.postsApiHandler(dataSaved),1000);
         setTimeout(this.handleReset(),3000);
         // setTimeout(handleLocationID(0.12),5000);
       } catch (error) {
