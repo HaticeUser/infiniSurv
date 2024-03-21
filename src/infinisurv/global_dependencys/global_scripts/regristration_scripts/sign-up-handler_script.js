@@ -21,19 +21,19 @@ export class SignUpHandler{
 
     
     processSignUpData(){
-        this.HTMLvar.push(this.firstname.value,
-            this.lastname.value,
-            this.username.value,
-            this.email.value,
-            this.password.value);
+        // this.HTMLvar.push(this.firstname.value,
+        //     this.lastname.value,
+        //     this.username.value,
+        //     this.email.value,
+        //     this.password.value);
 
-        let authorized = this.sanitizeInputHandler.processData(this.HTMLvar);
-        console.log(authorized) // bug
-        if(authorized === true){
+        // let authorized = this.sanitizeInputHandler.processData(this.HTMLvar);
+        // console.log(authorized) // bug
+        // if(authorized === true){
             console.log("Aufruf") // bug
             this.calculateAge(); // bug
 
-        }
+        // }
        
     }
     
