@@ -2,6 +2,8 @@ package com.mighty.infinitysurveyposts.frontendController;
 
 
 import com.mighty.infinitysurveyposts.models.SurveyModel;
+import com.mighty.infinitysurveyposts.services.surveyServices.SurveyCreationService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,8 +11,10 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class SurveyController {
 
+    @Autowired
+    SurveyCreationService surveyCreationService = new SurveyCreationService();
 
-    @GetMapping("surveyposts")
+    @GetMapping("/surveyposts")
     public ResponseEntity<SurveyModel> surveyPostsController(@RequestBody SurveyModel survey){
 
 
@@ -20,10 +24,10 @@ public class SurveyController {
     }
 
     @PostMapping("/surveycreation")
-    public ResponseEntity<String> surveyCreationController(@RequestBody SurveyModel survey){
+    public ResponseEntity<SurveyModel> surveyCreationController(@RequestBody SurveyModel survey){
 
 
-        return new ResponseEntity<String>("Data saved", HttpStatus.OK);//noch mitn  Service ändern
+        return surveyCreationService.addCreatedSurvey(survey);
 
     }
 

@@ -7,8 +7,6 @@ import java.util.Date;
 @Entity
 @Table( name = "tuser" , schema = "dbuser")
 public class UserModel {
-
-
 @Id
 @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer user_id;
