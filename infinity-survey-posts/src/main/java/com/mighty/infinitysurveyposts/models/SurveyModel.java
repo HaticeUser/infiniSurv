@@ -1,7 +1,6 @@
 package com.mighty.infinitysurveyposts.models;
 
 import jakarta.persistence.*;
-import java.util.List;
 import java.util.Date;
 
 @Entity
@@ -17,8 +16,6 @@ public class SurveyModel {
     private Integer user_storings;
     private boolean likes_disabled;
     private boolean user_storings_disabled;
-
-
 
     protected void SurveyModel(Date created_at, String question, Integer likes,Integer user_storings,boolean likes_disabled, boolean user_storings_disabled) {
         this.created_At = created_at;

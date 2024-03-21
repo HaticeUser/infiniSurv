@@ -1,0 +1,20 @@
+Report Day: 21.03.2024 (Day 1 Of Report)
+----------------------------------------
+
++- Worked on the SurveyService
++- Worked on the SurveyRepo (fixes)
++- Worked on the SurveyModel
++- Worked on the SurveyController
+
+
+Bug Fixes:
++-- Hibernate Jpa problem with answers need to be fixed
++-- processing of the given data from the frontend needs to changed
+
+
+New Ideas:
++-- New Idea where i change the Database a little bit, each answerbox has its own record
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------

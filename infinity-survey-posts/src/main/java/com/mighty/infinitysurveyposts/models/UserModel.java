@@ -122,7 +122,7 @@ public class UserModel {
         return created_At;
     }
 
-    public void setCreated_At(Date created_at) {
+    public void setCreated_At(Date created_At) {
         this.created_At = created_At;
     }
 
