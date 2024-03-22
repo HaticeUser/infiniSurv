@@ -1,6 +1,6 @@
 // import moment from "../../../../../node_modules/moment/moment.js";
 import {ApiInterfaceHandler} from "../api-handler_script.js"
-import { InputSanitizing } from "../security-measures_scripts/input_sanitizing_script.js";
+import { InputSanitizing } from "../security-measures_scripts/input-sanitizing_script.js";
 
 export class SignUpHandler{
 

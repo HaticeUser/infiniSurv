@@ -1,0 +1,202 @@
+
+
+ // brauchen wir vielleicht hier auch nciht wirklich ?
+
+ ---------------------WICHTIG
+   //Beim answerbox nohc die auswertungen mit reinschbeichern und dementsprechend z.b Man hat Zwei ANtworten im Fronmtened im post
+  // "Katze oder hund?"
+  // input 1 hat "katze"
+  // input 2 hat "hund"
+  // Und ein User wählt jetzt z.b Hund, dann muss der input entsprechend eine id haben damit man weiß ok, welches gehört jetzt welchem input?
+  //Also wo muss der vote jetzt daszugehören ?? zu welchem input und woher weiß ioch das dann?
+  // Hund hätte ja jetzt 1 vote wie lasse ich es im backend darstellen?
+ ------------------WICHITG
+ 
+
+//ansatz 2
+ let inputData = {
+  question: this.theme_Input.value,
+  answerBoxes: [
+    {
+      name:"AnswerBox_One",
+      value:"",
+      id:0,
+      votes:0,
+    },
+    {
+      name:"AnswerBox_Two",
+      value:"",
+      id:0,
+      votes:0,
+    },
+    {
+      name:"AnswerBox_Three",
+      value:"",
+      id:0,
+      votes:0,
+    },
+    {
+      name:"AnswerBox_Four",
+      value:"",
+      id:0,
+      votes:0,
+    },
+  ],
+  likes: this.likes,
+  likes_disabled: this.likes_disabled,
+  user_storings: this.savings,
+  user_storings_disabled: this.user_storings_disabled,
+};
+
+
+
+//ansatz 1
+let inputData = {
+  question: this.theme_Input.value,
+  answerBox_One:{
+    value:"",
+    id:0,
+    votes:0,
+  },
+  answerBox_Two:{
+    value:"",
+    id:0,
+    votes:0,
+  },
+  answerBox_Three:{
+    value:"",
+    id:0,
+    votes:0,
+  },
+  answerBox_Four:{
+    value:"",
+    id:0,
+    votes:0,
+  },
+  likes: this.likes,
+  likes_disabled: this.likes_disabled,
+  user_storings: this.savings,
+  user_storings_disabled: this.user_storings_disabled,
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export class SurveryCreation {
+    constructor() {
+      this.createdInput_Container = document.getElementById("createdInput-Container");
+      this.theme_Input = document.getElementById("themeInput");
+  
+      this.input = document.createElement("input");
+      this.deleteButton = document.createElement("input");
+      this.opinionInput_Container = document.createElement("div");
+  
+      this.createdInput = 0; // Brauchen wir
+  
+      //  Vielleicht von meiner Datenbank den größten stant des innhalts holen übergebn, hier plus rechnen und dann weiter übergeben
+  
+    }
+  
+    handleHTMLCreation() {
+  
+      // Zwei funmktionen erstellen die die erstelluhg vom, Delete button aurfuewn und eins für dei erstelleung vom, input
+      // Regelt entsprechend auch die Logiken die dahinter stecken ????
+      try {
+        if (this.createdInput < 5) {
+          this.createdInput++;
+          this.input = document.createElement("input");
+          this.deleteButton = document.createElement("input");
+          this.deleteButton.setAttribute("type", "button");
+          this.deleteButton.setAttribute("value", "X");
+          this.opinionInput_Container = document.createElement("div");
+          this.opinionInput_Container.classList.add("OpinionInput-Container");
+          this.deleteButton.classList.add("deleteInput-btn");
+          this.input.type = "text";
+          this.input.placeholder = "Answer";
+          this.input.size = 40;
+          this.input.classList.add("opinionInput");
+          this.inputIDs.push(this.input.id);
+          this.createdInput_Container.appendChild(this.opinionInput_Container);
+          this.opinionInput_Container.append(this.input);
+          this.opinionInput_Container.appendChild(this.deleteButton);
+          this.inputs.push(this.input);
+          this.opinionInput_Array.push(this.opinionInput_Container);
+    
+          this.deleteButtons.push(this.deleteButton);
+    
+          try {
+            this.deleteButtons.forEach((delBtn) => {
+              delBtn.addEventListener("click", (event) => {
+       
+      
+                  this.inputs.splice(this.inputs[this.createdInput], 1);
+          
+                  this.createdInput--;
+                  event.target.parentElement.remove();
+                  // Bug gefunden, mit dem einzelnden löschen der inputs, inputs werden dennoch anerkannt beim publishen.
+              
+              });
+            });
+          } catch (error) {
+            console.error("Problems with Deleting-Inputs: ", error);
+          }
+         
+        }
+        
+      } catch (error) {
+        console.error("Problems with Inputs-Creation: ", error);
+      }
+      
+    }
+  
+
+
+    // echt schlaue nice art die daten zu verarbeiten
+    saveData() {
+      try {
+        let inputData = {
+          question: this.theme_Input.value,
+          answers: {
+            answerOne: "",
+            answerTwo: "",
+            answerThree: "",
+            answerFour: "",
+          },
+          likes: this.likes,
+          likes_disabled: this.likes_disabled,
+          user_storings: this.savings,
+          user_storings_disabled: this.user_storings_disabled,
+        };
+  
+        // Geht auch einfacher, finde weg wie und was ist mit leeren inputs z.b?? wie wird das üpberprüft?
+        for (let index = 0; index < this.inputs.length; index++) {
+          Object.entries(inputData.answers).forEach(([key, value], i) => {
+            console("key: " + key , "Foreach - index: " + i , "index: " + index )
+            if (i === index) {
+              inputData.answers[key] = this.inputs[index].value;
+            }
+          });
+        }
+  
+  
+        console.log(inputData);
+        return inputData;
+      } catch (error) {
+        throw new Error(
+          "Problem with calling savingData() function, a Problem occured here:" +
+            error
+        );
+      }
+    }
