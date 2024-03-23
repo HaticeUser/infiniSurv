@@ -89,22 +89,22 @@ export class SurveryCreation {
     try {
       let createdPostData = {
         question: this.theme_Input.value,
-        answerBox_One: {
+        answerBox_0: {
           value: "",
           id: 0,
           votes: 0,
         },
-        answerBox_Two: {
+        answerBox_1: {
           value: "",
           id: 1,
           votes: 0,
         },
-        answerBox_Three: {
+        answerBox_2: {
           value: "",
           id: 2,
           votes: 0,
         },
-        answerBox_Four: {
+        answerBox_3: {
           value: "",
           id: 3,
           votes: 0,
@@ -114,25 +114,11 @@ export class SurveryCreation {
         user_storings: this.savings,
         user_storings_disabled: this.user_storings_disabled,
       };
-
       for (let index = 0; index < this.inputs.length; index++) {
-        switch (index) {
-          case 0:
-            createdPostData.answerBox_One.value = this.inputs[index].value;
-            break;
-          case 1:
-            createdPostData.answerBox_Two.value = this.inputs[index].value;
-            break;
-          case 2:
-            createdPostData.answerBox_Three.value = this.inputs[index].value;
-            break;
-          case 3:
-            createdPostData.answerBox_Four.value = this.inputs[index].value;
-            break;
-          default:
-            console.log("No Input Values found");
-        }
+        let answerBox = createdPostData[`answerBox_${index}`];
+        console.log(answerBox.value = this.inputs[index].value); 
       }
+
 
       console.log(createdPostData);
       return createdPostData;

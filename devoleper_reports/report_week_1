@@ -59,3 +59,26 @@ IDEA IN = input_ <---(!changename! - not _)sanatizing_script.js //fixes wie z.b 
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------
+Report Day: 22.03.2024 (Day 4 Of Report)
+----------------------------------------
+
++- Worked on Posts json-object(dictenory)
++--> new object structure and logic build
++----> Need to work on backend now.
+
+
+Bug Fixes:
++- Sanatizing-Handler doesent work fully **** Still dosent work
++---> So Connection With Backend dosent work, Connection breaks beforehand, because of wrong returning from Sanatizer-file.
++-----> For now the sanatizer things is in comments, because of the work in the frontend for the posts
+
+----Monika was asked.
+
+New Ideas:
+Ideas Written in Notion, ideas being of Security ofspring.
+Fix Code of survey-creation_script.js, it has some logic problems.
+IDEA IN = survey-creation_script.js//  Vielleicht von meiner Datenbank den größten stant des innhalts holen übergebn, hier plus rechnen und dann weiter übergeben
+IDEA IN =//fixes wie z.b SQL injections  /[&<>|+;:,]select/gi
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,8 +1,6 @@
 export class ApiInterfaceHandler{
 
-    constructor(){
-
-    }
+  
 
     async signUpApiHandler(signUpData){
         try{
