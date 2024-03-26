@@ -16,6 +16,10 @@ export class SurveryCreation {
     this.opinionInput_Array = [];
     this.deleteButtons = [];
     this.inputs = [];
+
+    this.user_storings_disabled = true;
+    this.user_storings = 0;
+    this.likes_disabled = true;
   }
 
   handleHTMLCreation() {
@@ -111,12 +115,13 @@ export class SurveryCreation {
         },
         likes: this.likes,
         likes_disabled: this.likes_disabled,
+        opinionlength: this.inputs.length,
         user_storings: this.savings,
         user_storings_disabled: this.user_storings_disabled,
       };
       for (let index = 0; index < this.inputs.length; index++) {
         let answerBox = createdPostData[`answerBox_${index}`];
-        console.log(answerBox.value = this.inputs[index].value); 
+        answerBox.value = this.inputs[index].value; 
       }
 
 
@@ -133,9 +138,9 @@ export class SurveryCreation {
   handlePublication() {
     if (this.input.value != "" && this.theme_Input.value != "") {
       try {
-        this.saveData();
-        // let dataSaved =
-        // setTimeout(this.apiInterfaceHandler.postsApiHandler(dataSaved),1000);
+      
+        let dataSaved =  this.saveData();
+        setTimeout(this.apiInterfaceHandler.postsApiHandler(dataSaved),1000);
         setTimeout(this.handleReset(), 3000);
         // setTimeout(handleLocationID(0.12),5000);
       } catch (error) {

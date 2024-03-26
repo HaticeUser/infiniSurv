@@ -46,7 +46,7 @@
           <input type="checkbox" id="chk" aria-hidden="true" />
 
           <div class="signup">
-              <form onsubmit="import('../global_dependencys/global_scripts/main_script.js').then(module => {module.forwardingSignUpData(event)}).catch(err => {console.error(err);}); return false">
+              <form onsubmit="import('../../../global_dependencys/global_scripts/main_script.js').then(module => {module.forwardingSignUpData(event)}).catch(err => {console.error(err);}); return false">
                   <label class="login-label" for="chk" aria-hidden="true">Sign up</label>
                   <input class="login-input" id="firstname" name="txt" placeholder="Firstname*" required
                       size="10" />
@@ -65,7 +65,7 @@
 
           <div class="login">
               
-              <form onsubmit="import('../global_dependencys/global_scripts/main_script.js').then(module => {module.forwardingLoginData(event)}).catch(err => {console.error(err);}); return false">
+              <form onsubmit="import('../../../global_dependencys/global_scripts/main_script.js').then(module => {module.forwardingLoginData(event)}).catch(err => {console.error(err);}); return false">
                   <label class="login-label" for="chk" aria-hidden="true">Login</label>
                   <h4 id="loggedIn-display" class="loggedIn-false">Angemeldet</h4>
                   <input class="login-input" value="" id="login-email" type="email" name="email"
@@ -285,11 +285,11 @@
  <!------------------------------------------FOOTER------------------------------------------------------------->
  
 
-  <script type="module">
-    // import { alert } from '../../../node_modules/bootstrap/js/src/alert.js'
+  <!-- <script type="module"> -->
+    <!-- // import { alert } from '../../../node_modules/bootstrap/js/src/alert.js'
 
-    import { handleLocationID } from "../../../global_dependencys/global_scripts/main_script.js";
-  </script>
+  //   import { handleLocationID } from "../../../global_dependencys/global_scripts/main_script.js"; -->
+  <!-- // </script> -->
 </body>
 
 </html>
