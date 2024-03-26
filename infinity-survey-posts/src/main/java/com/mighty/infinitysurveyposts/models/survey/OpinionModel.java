@@ -9,9 +9,9 @@ public class OpinionModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int opinion_id;
-   // @ManyToOne
-   // @JoinColumn(name = "post_id", referencedColumnName = "post_id")
-    // private PostModel postModel;
+   //@ManyToOne()
+   //@JoinColumn(name = "post_id", referencedColumnName = "post_id")
+     //private PostModel postModel;
     private String opinion;
     private int opinion_order_id;
     private int votes;

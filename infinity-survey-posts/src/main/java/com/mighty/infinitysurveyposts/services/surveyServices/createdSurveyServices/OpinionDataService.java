@@ -3,6 +3,8 @@ package com.mighty.infinitysurveyposts.services.surveyServices.createdSurveyServ
 import com.mighty.infinitysurveyposts.models.survey.OpinionModel;
 import com.mighty.infinitysurveyposts.repositorys.OpinionRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +19,7 @@ public class OpinionDataService {
     @Autowired
     OpinionRepository opinionRepository;
     OpinionModel opinionModel = new OpinionModel();
-
+    protected static final Logger logger = LogManager.getLogger();
     public ResponseEntity<String> addRelationalData (Map<String, Object> opinionData){
         try {
             int opinionLength = (int) opinionData.get("opinionlength") ;
@@ -37,7 +39,9 @@ public class OpinionDataService {
             }
 
         } catch (Exception e) {
+            logger.error("OpinionDataService: "+ e);
             throw new RuntimeException(e);
+
         }
         return new ResponseEntity<>("post savings didnt work",HttpStatus.OK);
     }

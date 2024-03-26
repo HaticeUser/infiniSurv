@@ -15,8 +15,8 @@ public class PostModel {
     private String question;
     @Column(name = "object_id")
     private int object_ID;
-   // @OneToMany(mappedBy = "tpost", cascade = CascadeType.ALL)
-    //private List<OpinionModel> opinions;
+   // @OneToMany( mappedBy = "tpost", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+   // private List<OpinionModel> opinions;
     private int likes;
     @Column(name = "user_storings")
     private int savings;
@@ -89,6 +89,7 @@ public class PostModel {
     public void setUser_storings_disabled(boolean user_storings_disabled) {
         this.user_storings_disabled = user_storings_disabled;
     }
+
 
 
 }
