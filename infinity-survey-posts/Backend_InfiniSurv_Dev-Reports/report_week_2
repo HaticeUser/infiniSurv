@@ -1,0 +1,20 @@
+Report Day: 25.03.2024 (Day 1 Of Week 2 Report)
+----------------------------------------
+
++- New surveyModel directory
++- new models postModel and opinionModel
++- Worked on relation between both named models
++- research
+
+
+Bug Fixes:
++-- Didnt finish everything today so opinion and post- model dont work as planned
+
+
+New Ideas:
++-- New Idea where i change the Database a little bit, each answerbox has its own record
++-- nee´d to make a structure plan tomorrow, how everything works together and is connected
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------

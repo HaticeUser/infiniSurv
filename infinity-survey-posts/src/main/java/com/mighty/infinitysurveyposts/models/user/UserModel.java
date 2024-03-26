@@ -1,4 +1,4 @@
-package com.mighty.infinitysurveyposts.models;
+package com.mighty.infinitysurveyposts.models.user;
 
 import jakarta.persistence.*;
 
