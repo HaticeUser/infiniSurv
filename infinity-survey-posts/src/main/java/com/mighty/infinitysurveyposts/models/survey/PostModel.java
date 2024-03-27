@@ -9,14 +9,17 @@ import java.util.List;
 public class PostModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer post_id ;
+    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    //@SequenceGenerator(name ="my_entity_seq",sequenceName = "my_entity_seq", allocationSize = 1)
+    private Integer post_id;
     private Date created_At = new Date();
     private String question;
     @Column(name = "object_id")
     private int object_ID;
-   // @OneToMany( mappedBy = "tpost", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-   // private List<OpinionModel> opinions;
+
+
+    @OneToMany( mappedBy = "post")
+    private List<OpinionModel> opinion;
     private int likes;
     @Column(name = "user_storings")
     private int savings;

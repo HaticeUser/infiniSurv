@@ -1,5 +1,6 @@
 package com.mighty.infinitysurveyposts.models.user;
 
+import com.mighty.infinitysurveyposts.models.survey.OpinionModel;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -22,18 +23,8 @@ public class UserModel {
     private Date last_login = new Date();
     private Date created_At = new Date();
 
-    protected void User(String firstname, String lastname, String username, String password, String email, int age, Date birthday  , String country, String gender, Date last_login, Date created_At){
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.username = username;
-        this.password = password;
-        this.age = age;
-        this.email = email;
-        this.birthday = birthday;
-        this.country = country;
-        this.last_login = last_login;
-        this.created_At = created_At;
-        this.gender = gender;
+    public UserModel() {
+
     }
 
 

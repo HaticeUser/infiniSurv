@@ -18,26 +18,21 @@ public class OpinionDataService {
 
     @Autowired
     OpinionRepository opinionRepository;
+
     OpinionModel opinionModel = new OpinionModel();
     protected static final Logger logger = LogManager.getLogger();
-    public ResponseEntity<String> addRelationalData (Map<String, Object> opinionData){
+    public ResponseEntity<String> addRelationalData (Map<String, Object> postData){
+        System.out.println(postData);
+        System.out.println("Hall0");
         try {
-            int opinionLength = (int) opinionData.get("opinionlength") ;
-            for (int i = 0; i < opinionLength; i++) {
-                Map<String, Object> answerBoxData = (Map<String, Object>) opinionData.get("answerBox_" + i);
-                String opinionValue =(String) answerBoxData.get("value") ;
-                int opinionID = (int) answerBoxData.get("id");
-                int votes =(int) answerBoxData.get("votes") ;
+            Map<String, Object> answerBox_0 = (Map<String, Object>) postData.get("answerBox_0");
+            String value = (String) answerBox_0.get("value");
+            int id = (int) answerBox_0.get("id");
+            int votes = (int) answerBox_0.get("votes");
 
-                opinionModel.setVotes(votes);
-                opinionModel.setOpinion_order_id(opinionID);
-                opinionModel.setOpinion(opinionValue);
+            System.out.println("Value: " + value);
 
-                opinionRepository.save(opinionModel);
-                return new ResponseEntity<>("Answerbox wurde gesetzt", HttpStatus.OK);
-
-            }
-
+            //System.out.println(opinionModel.getOpinionlength());
         } catch (Exception e) {
             logger.error("OpinionDataService: "+ e);
             throw new RuntimeException(e);

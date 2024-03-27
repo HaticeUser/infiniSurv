@@ -20,8 +20,7 @@ public class PostDataService {
 
     @Autowired
     PostRepository postRepository;
-    // @Autowired
-    //OpinionDataService opinionDataService = new OpinionDataService();
+
     protected static final Logger logger = LogManager.getLogger();
     public ResponseEntity<PostModel> addCreatedSurveyData (PostModel survey){
 
@@ -36,7 +35,6 @@ public class PostDataService {
             lastSurveyDataAssignment(survey);
 
             postRepository.save(survey);
-            // opinionDataService.addRelationalData(survey);
             return new ResponseEntity<>(survey, HttpStatus.OK);
 
         } catch (Exception e) {

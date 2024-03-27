@@ -18,3 +18,36 @@ New Ideas:
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------
+Report Day: 26.03.2024 (Day 2 Of Week 2 Report)
+----------------------------------------
+
++- added logging
++- OpinionDataService
++- tryed to debug project (didnt work)
+
+
+
+Bug Fixes:
++-- Didnt finish everything today so opinion and post- model dont work as planned
+
+
+New Ideas:
++-- New Idea where i change the Database a little bit, each answerbox has its own record
++-- nee´d to make a structure plan tomorrow, how everything works together and is connected
+-------------------------------------------------------------------------------------------------------------------------------------------
+Report Day: 27.03.2024 (Day 3 Of Week 2 Report)
+----------------------------------------
+
++- bug fixing
+++--- bug finished ?? but programm isnt finished
+
+
+
+
+Bug Fixes:
++-- Fixed bug, reply from frontend is good
++-- Need to make changes now in the Controller, right extraction fo dat, after that i will be forwarding it to the Services
+
+New Ideas:
++-- New Idea where i change the Database a little bit, each answerbox has its own record
++-- nee´d to make a structure plan tomorrow, how everything works together and is connected
