@@ -20,6 +20,8 @@ export class SurveryCreation {
     this.user_storings_disabled = true;
     this.user_storings = 0;
     this.likes_disabled = true;
+    this.likes = 0;
+    this.user_storings = 0;
   }
 
   handleHTMLCreation() {
@@ -116,12 +118,13 @@ export class SurveryCreation {
         likes: this.likes,
         likes_disabled: this.likes_disabled,
         opinionlength: this.inputs.length,
-        user_storings: this.savings,
+        user_storings: this.user_storings,
         user_storings_disabled: this.user_storings_disabled,
       };
       for (let index = 0; index < this.inputs.length; index++) {
         let answerBox = createdPostData[`answerBox_${index}`];
         answerBox.value = this.inputs[index].value; 
+        console.log( answerBox.value = this.inputs[index].value)
       }
 
 
@@ -173,3 +176,6 @@ export class SurveryCreation {
     }
   }
 }
+
+
+      
