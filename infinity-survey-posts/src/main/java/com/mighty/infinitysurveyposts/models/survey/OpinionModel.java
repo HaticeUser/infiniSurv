@@ -11,10 +11,12 @@ public class OpinionModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
     //@SequenceGenerator(name ="my_entity_seq",sequenceName = "my_entity_seq", allocationSize = 1)
-    private Integer opinion_id;
+    private long opinion_id;
+
+
 
     @ManyToOne
-    @JoinColumn(name = "post_id" , referencedColumnName = "post_id")
+    @JoinColumn(name = "post_id")
     private PostModel post;
 
     private String opinion;
@@ -24,10 +26,6 @@ public class OpinionModel {
 
 
     private int opinionlength;
-
-
-
-
 
 
     public OpinionModel(){
@@ -76,7 +74,11 @@ public class OpinionModel {
 
 
 
+    public PostModel getPost() {
+        return post;
+    }
 
-
-
+    public void setPost(PostModel post) {
+        this.post = post;
+    }
 }

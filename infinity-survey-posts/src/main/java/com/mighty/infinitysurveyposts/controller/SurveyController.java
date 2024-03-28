@@ -21,7 +21,7 @@ import java.util.Map;
 public class SurveyController {
 
     @Autowired
-    PostDataService postDataService = new PostDataService();
+    PostDataService postDataService;
 
     @Autowired
     OpinionDataService opinionDataService;
@@ -36,12 +36,12 @@ public class SurveyController {
     }
 
     @PostMapping("/surveycreation")
-    public ResponseEntity<?> surveyCreationController(@RequestBody Map<String,Object> postData){
+    public  ResponseEntity<?>  surveyCreationController(@RequestBody Map<String,Object> postData){
         try {
+            postDataService.extractPostData(postData);
 
-            System.out.println(postData);
 
-            return opinionDataService.addRelationalData(postData);//postDataService.addCreatedSurveyData(postData); // PostModel
+            return  opinionDataService.extractOpinionData(postData);   // PostModel
         } catch (Exception e) {
             logger.error("Error in Survey Controller: " + e);
             throw new RuntimeException(e);

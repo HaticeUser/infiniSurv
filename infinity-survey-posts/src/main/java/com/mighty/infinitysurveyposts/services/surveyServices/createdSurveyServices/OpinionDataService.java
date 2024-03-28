@@ -18,21 +18,44 @@ public class OpinionDataService {
 
     @Autowired
     OpinionRepository opinionRepository;
+    private int added =0;
 
-    OpinionModel opinionModel = new OpinionModel();
+
     protected static final Logger logger = LogManager.getLogger();
-    public ResponseEntity<String> addRelationalData (Map<String, Object> postData){
-        System.out.println(postData);
-        System.out.println("Hall0");
+
+
+
+    public ResponseEntity<String> extractOpinionData (Map<String, Object> opinionData){
+        System.out.println("post Data Service: " + opinionData);
         try {
-            Map<String, Object> answerBox_0 = (Map<String, Object>) postData.get("answerBox_0");
-            String value = (String) answerBox_0.get("value");
-            int id = (int) answerBox_0.get("id");
-            int votes = (int) answerBox_0.get("votes");
+            int opinion_Length = (int) opinionData.get("opinionlength");
+            for (int i = 0; i < opinion_Length; i++) {
+                Map<String, Object> answerBox_0 = (Map<String, Object>) opinionData.get("answerBox_" + i);
+                String opinionValue = (String) answerBox_0.get("value");
+                int order_Id = (int) answerBox_0.get("id");
+                int votes = (int) answerBox_0.get("votes");
 
-            System.out.println("Value: " + value);
 
-            //System.out.println(opinionModel.getOpinionlength());
+
+                OpinionModel opinionModel = new OpinionModel();
+
+
+
+
+                opinionModel.setOpinion(opinionValue);
+                opinionModel.setOpinion_order_id(order_Id);
+                opinionModel.setOpinionlength(opinion_Length);
+                opinionModel.setVotes(votes);
+
+                System.out.println(opinionModel.getOpinion());
+                System.out.println(opinionModel.getOpinion_order_id());
+                System.out.println(opinionModel.getVotes());
+                System.out.println("saved: " + added);
+
+
+               opinionRepository.save(opinionModel);
+
+            }
         } catch (Exception e) {
             logger.error("OpinionDataService: "+ e);
             throw new RuntimeException(e);

@@ -1,6 +1,7 @@
 package com.mighty.infinitysurveyposts.services.surveyServices.createdSurveyServices;
 
 
+import com.mighty.infinitysurveyposts.models.survey.OpinionModel;
 import com.mighty.infinitysurveyposts.models.survey.PostModel;
 import com.mighty.infinitysurveyposts.repositorys.PostRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -21,21 +22,40 @@ public class PostDataService {
     @Autowired
     PostRepository postRepository;
 
+    @Autowired
+    OpinionDataService opinionDataService;
     protected static final Logger logger = LogManager.getLogger();
-    public ResponseEntity<PostModel> addCreatedSurveyData (PostModel survey){
 
+
+    public ResponseEntity<?> extractPostData (Map<String, Object> postData){
+        System.out.println("post Data Service: " + postData);
         try {
-            survey.setQuestion(survey.getQuestion());
-            survey.setLikes(survey.getLikes());
-            survey.setSavings(survey.getSavings());
-            survey.setLikes_disabled(survey.getLikes_disabled());
-            survey.setUser_storings_disabled(survey.getUser_storings_disabled());
-            survey.setObject_ID(survey.getObject_ID());
+            PostModel postModel = new PostModel();
+            postModel.setQuestion((String) postData.get("question"));
+            postModel.setLikes((int) postData.get("likes"));
+            postModel.setLikes_disabled((boolean) postData.get("likes_disabled"));
+            postModel.setSavings((int) postData.get("user_storings"));
+            postModel.setUser_storings_disabled((boolean) postData.get("user_storings_disabled") );
 
-            lastSurveyDataAssignment(survey);
+            System.out.println(postModel.getQuestion());
+            System.out.println(postModel.getLikes());
+            System.out.println(postModel.getLikes_disabled());
+            System.out.println(postModel.getSavings());
+            System.out.println(postModel.getUser_storings_disabled());
 
-            postRepository.save(survey);
-            return new ResponseEntity<>(survey, HttpStatus.OK);
+
+
+            lastSurveyDataAssignment(postModel);
+
+            System.out.println("post_id: " + postModel.getPost_id());
+
+
+
+            PostModel geModel = postRepository.save(postModel);
+            System.out.println(geModel.getPost_id());
+            //opinionDataService.forwardingPostID();
+            return new ResponseEntity<>(postModel, HttpStatus.OK);
+
 
         } catch (Exception e) {
             logger.error("PostDataService: "+ e);

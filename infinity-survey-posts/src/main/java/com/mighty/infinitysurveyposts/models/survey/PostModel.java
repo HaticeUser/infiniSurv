@@ -11,15 +11,15 @@ public class PostModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
     //@SequenceGenerator(name ="my_entity_seq",sequenceName = "my_entity_seq", allocationSize = 1)
-    private Integer post_id;
+
+    private long post_id;
     private Date created_At = new Date();
     private String question;
     @Column(name = "object_id")
     private int object_ID;
 
-
-    @OneToMany( mappedBy = "post")
-    private List<OpinionModel> opinion;
+    @OneToMany(mappedBy = "post")
+    private List<OpinionModel> opinions;
     private int likes;
     @Column(name = "user_storings")
     private int savings;
@@ -93,6 +93,11 @@ public class PostModel {
         this.user_storings_disabled = user_storings_disabled;
     }
 
+    public long getPost_id() {
+        return post_id;
+    }
 
-
+    public void setPost_id(long post_id) {
+        this.post_id = post_id;
+    }
 }

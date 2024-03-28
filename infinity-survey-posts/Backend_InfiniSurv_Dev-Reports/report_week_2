@@ -51,3 +51,18 @@ Bug Fixes:
 New Ideas:
 +-- New Idea where i change the Database a little bit, each answerbox has its own record
 +-- nee´d to make a structure plan tomorrow, how everything works together and is connected
+-------------------------------------------------------------------------------------------------------------------------------------------
+Report Day: 28.03.2024 (Day 4 Of Week 2 Report)
+----------------------------------------
+
++- Finished Program, after Debugging
+++--- found new Problem with null-Constraint of post_id in OpinionModel from PostModel
+
+
+Bug Fixes:
+++-- found a way to get post_id after saving a entity model
+
+New Ideas:
++-- New Idea where i change the Database a little bit, each answerbox has its own record
++-- nee´d to make a structure plan tomorrow, how everything works together and is connected
++-- Need to find idea how to give generated post_id from PostModel to OpinionModel table (maybe by post in OpinionModel?)
